@@ -345,7 +345,6 @@ section {
   font-size: clamp(28px, 4vw, 42px);
   letter-spacing: -0.01em;
 }
-/* .section-title-lg{font-size:clamp(46px,8vw,82px);} */
 
 /* ---------- about ---------- */
 .about-grid {
@@ -552,7 +551,7 @@ footer {
   justify-content: space-between;
   gap: 40px;
   flex-wrap: wrap;
-  padding: 70px 0 50px;
+  padding: 70px 20px 50px;
 }
 .footer-brand .logo {
   margin-bottom: 14px;
@@ -1624,9 +1623,6 @@ section.wrap,
   mask-image: linear-gradient(#000 80%, transparent);
 }
 
-/* ===== profile (smaller) + tags stuck to circle edge ===== */
-
-/* ===== profile: orange circle + cutout ===== */
 :root {
   --orange: #ff6b00;
 }
@@ -1682,7 +1678,7 @@ section.wrap,
 }
 
 .tag-2 {
-  bottom: -4%;  
+  bottom: -3%;  
   right: -70px;
   z-index: 2;
 }
@@ -1704,12 +1700,14 @@ section.wrap,
   }
 
   .tag-1 {
-    left: -28%;
-    width: 126px;
+    left: 20%;
+    top: -7%;
+    width: 125px;
   }
 
   .tag-2 {
-    right: -82px;
+    right: 15px;
+    bottom: -10%; 
   }
 }
 

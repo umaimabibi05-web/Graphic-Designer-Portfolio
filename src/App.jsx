@@ -238,7 +238,11 @@ export default function App() {
       gsap.utils.toArray('.h-mask > span').forEach(el => gsap.from(el, { yPercent: 115, duration: 1.1, ease: 'power4.out', scrollTrigger: { trigger: el, start: 'top 90%', once: true } }))
       gsap.utils.toArray('[data-r]').forEach(el => {
         const t = el.dataset.r, v = { opacity: 0, duration: 1, delay: +el.dataset.d || 0, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 90%', once: true } }
-        if (t === 'left') v.x = -50; else if (t === 'right') v.x = 50; else if (t === 'scale') v.scale = .9; else v.y = 45
+        const small = innerWidth < 900
+        if (t === 'left') { if (small) v.y = 30; else v.x = -50 }
+        else if (t === 'right') { if (small) v.y = 45; else v.x = 50 }
+        else if (t === 'scale') v.scale = .9
+        else v.y = 45
         gsap.from(el, v)
       })
       gsap.utils.toArray('[data-count]').forEach(el => {
@@ -396,7 +400,7 @@ export default function App() {
               <p className="lead">Have a brand, poster or website in mind? Tell me about it. I'd love to work together.</p>
               <div className="contact-info">
                 <div><span className="label">Email</span><a href="mailto:umaimabibi05@gmail.com">umaimabibi05@gmail.com</a></div>
-                <div><span className="label">Phone</span><a href="tel:+923343290810">+92 334 3290810</a></div>
+                <div><span className="label">Phone</span><a href="tel:+923303768194">+92 330 3768194</a></div>
                 <div><span className="label">Location</span><b>{SOCIAL.location}</b></div>
               </div>
               <div className="socials">
@@ -412,10 +416,10 @@ export default function App() {
 
       <footer>
         <div className="wrap footer-top">
-          <div className="footer-brand"><div className="logo">UB</div><p className="footer-tagline">Graphic design & front-end craft for brands that want to be remembered — based in Karachi, Pakistan.</p></div>
+          <div className="footer-brand"><div className="logo">UB</div><p className="footer-tagline">Graphic design & front-end craft for brands that want to be remembered, based in Karachi, Pakistan.</p></div>
           <div className="footer-links">
             <div><span className="label">Navigate</span>{['work', 'about', 'skills', 'contact'].map(s => <a key={s} href={`#${s}`} onClick={go}>{s[0].toUpperCase() + s.slice(1)}</a>)}</div>
-            <div><span className="label">Get in touch</span><a href="mailto:umaimabibi05@gmail.com">umaimabibi05@gmail.com</a><a href="tel:+923343290810">+92 334 3290810</a></div>
+            <div><span className="label">Get in touch</span><a href="mailto:umaimabibi05@gmail.com">umaimabibi05@gmail.com</a><a href="tel:+923303768194">+92 330 3768194</a></div>
           </div>
         </div>
         <div className="wrap footer-bottom"><span>© 2026 Umaima Bibi M. Aslam</span>
